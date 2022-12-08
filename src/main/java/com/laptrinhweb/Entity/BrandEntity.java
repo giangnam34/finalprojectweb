@@ -11,17 +11,15 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "category")
-public class CategoryEntity {
+@Table(name = "brand")
+public class BrandEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "category_id")
+	@Column(name = "brand_id")
 	private Long id;
-
 	@Column()
 	private String name;
-
-	@OneToMany(mappedBy = "category")
+	@OneToMany(mappedBy = "brand")
 	private List<ProductEntity> products;
 
 	public String getName() {
@@ -49,4 +47,3 @@ public class CategoryEntity {
 	}
 
 }
-

@@ -1,5 +1,6 @@
 package com.laptrinhweb.Entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -7,29 +8,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "category")
-public class CategoryEntity {
+@Table(name = "image")
+public class ImageEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "category_id")
+	@Column(name = "image_id")
 	private Long id;
-
 	@Column()
-	private String name;
+	private String image;
 
-	@OneToMany(mappedBy = "category")
-	private List<ProductEntity> products;
+	@ManyToMany(mappedBy = "images")
+	private List<ProductEntity> products = new ArrayList<>();
 
-	public String getName() {
-		return name;
+	public String getImage() {
+		return image;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public List<ProductEntity> getProducts() {
@@ -49,4 +49,3 @@ public class CategoryEntity {
 	}
 
 }
-

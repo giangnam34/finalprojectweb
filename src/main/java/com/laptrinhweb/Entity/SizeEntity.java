@@ -1,5 +1,6 @@
 package com.laptrinhweb.Entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -11,33 +12,32 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "category")
-public class CategoryEntity {
+@Table(name = "size")
+public class SizeEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "category_id")
+	@Column(name = "size_id")
 	private Long id;
-
 	@Column()
-	private String name;
+	private Double size;
 
-	@OneToMany(mappedBy = "category")
-	private List<ProductEntity> products;
+	@OneToMany(mappedBy = "size")
+	private List<ProductSizeEntity> productSizes = new ArrayList<>();
 
-	public String getName() {
-		return name;
+	public Double getSize() {
+		return size;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setSize(Double size) {
+		this.size = size;
 	}
 
-	public List<ProductEntity> getProducts() {
-		return products;
+	public List<ProductSizeEntity> getProductSizes() {
+		return productSizes;
 	}
 
-	public void setProducts(List<ProductEntity> products) {
-		this.products = products;
+	public void setProductSizes(List<ProductSizeEntity> productSizes) {
+		this.productSizes = productSizes;
 	}
 
 	public Long getId() {
