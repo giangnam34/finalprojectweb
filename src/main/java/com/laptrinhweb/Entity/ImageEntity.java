@@ -48,4 +48,15 @@ public class ImageEntity {
 		this.id = id;
 	}
 
+	public ImageEntity() {
+		super();
+	}
+
+	public ImageEntity(Long id, String image, List<ProductEntity> products) {
+		super();
+		this.id = id;
+		this.image = image;
+		this.products = products;
+	}
+
 }

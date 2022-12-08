@@ -67,4 +67,16 @@ public class ProductOrderEntity {
 		this.id = id;
 	}
 
+	public ProductOrderEntity() {
+		super();
+	}
+
+	public ProductOrderEntity(ProductOrderKey id, ProductEntity product, OrderEntity order, Long quantity) {
+		super();
+		this.id = id;
+		this.product = product;
+		this.order = order;
+		this.quantity = quantity;
+	}
+
 }

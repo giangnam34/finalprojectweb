@@ -1,3 +1,4 @@
+
 package com.laptrinhweb.Entity;
 
 import java.util.List;
@@ -44,6 +45,17 @@ public class BrandEntity {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public BrandEntity() {
+		super();
+	}
+
+	public BrandEntity(Long id, String name, List<ProductEntity> products) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.products = products;
 	}
 
 }

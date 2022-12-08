@@ -49,5 +49,15 @@ public class ColorEntity {
 		this.id = id;
 	}
 
-}
+	public ColorEntity() {
+		super();
+	}
 
+	public ColorEntity(Long id, String color, List<ProductColorEntity> productColors) {
+		super();
+		this.id = id;
+		this.color = color;
+		this.productColors = productColors;
+	}
+
+}

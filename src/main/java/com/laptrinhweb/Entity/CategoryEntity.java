@@ -48,5 +48,15 @@ public class CategoryEntity {
 		this.id = id;
 	}
 
-}
+	public CategoryEntity() {
+		super();
+	}
 
+	public CategoryEntity(Long id, String name, List<ProductEntity> products) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.products = products;
+	}
+
+}

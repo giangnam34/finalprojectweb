@@ -167,4 +167,28 @@ public class ProductEntity {
 		this.id = id;
 	}
 
+	public ProductEntity() {
+		super();
+	}
+
+	public ProductEntity(Long id, String name, Long money, Long sold_quantity, Double discount, Long stock,
+			String description, List<ProductOrderEntity> productOrders, List<ProductColorEntity> productColors,
+			List<ProductSizeEntity> productSizes, List<ImageEntity> images, CategoryEntity category,
+			BrandEntity brand) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.money = money;
+		this.sold_quantity = sold_quantity;
+		this.discount = discount;
+		this.stock = stock;
+		this.description = description;
+		this.productOrders = productOrders;
+		this.productColors = productColors;
+		this.productSizes = productSizes;
+		this.images = images;
+		this.category = category;
+		this.brand = brand;
+	}
+
 }

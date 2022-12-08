@@ -126,4 +126,23 @@ public class CustomerEntity {
 		this.id = id;
 	}
 
+	public CustomerEntity() {
+		super();
+	}
+
+	public CustomerEntity(Long id, String name, String phone, String address, Boolean sex, String email, String image,
+			Boolean status, LoginEntity login, List<OrderEntity> orders) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.phone = phone;
+		this.address = address;
+		this.sex = sex;
+		this.email = email;
+		this.image = image;
+		this.status = status;
+		this.login = login;
+		this.orders = orders;
+	}
+
 }

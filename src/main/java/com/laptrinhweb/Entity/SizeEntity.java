@@ -48,5 +48,15 @@ public class SizeEntity {
 		this.id = id;
 	}
 
-}
+	public SizeEntity() {
+		super();
+	}
 
+	public SizeEntity(Long id, Double size, List<ProductSizeEntity> productSizes) {
+		super();
+		this.id = id;
+		this.size = size;
+		this.productSizes = productSizes;
+	}
+
+}

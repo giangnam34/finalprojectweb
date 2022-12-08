@@ -26,7 +26,7 @@ public class LoginEntity {
 
 	@Column()
 	private Boolean role;
-	
+
 	@Column()
 	private Date session;
 
@@ -73,4 +73,18 @@ public class LoginEntity {
 	public void setSession(Date session) {
 		this.session = session;
 	}
+
+	public LoginEntity() {
+		super();
+	}
+
+	public LoginEntity(String username, String password, Boolean role, Date session, CustomerEntity customer) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.role = role;
+		this.session = session;
+		this.customer = customer;
+	}
+
 }

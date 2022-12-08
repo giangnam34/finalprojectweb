@@ -97,4 +97,20 @@ public class OrderEntity {
 		this.id = id;
 	}
 
+	public OrderEntity() {
+		super();
+	}
+
+	public OrderEntity(Long id, Date order_date, Double discount, Long total_price, Boolean payment_status,
+			List<ProductOrderEntity> productOrders, CustomerEntity customer) {
+		super();
+		this.id = id;
+		this.order_date = order_date;
+		this.discount = discount;
+		this.total_price = total_price;
+		this.payment_status = payment_status;
+		this.productOrders = productOrders;
+		this.customer = customer;
+	}
+
 }

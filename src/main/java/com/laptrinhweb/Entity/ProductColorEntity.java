@@ -66,4 +66,16 @@ public class ProductColorEntity {
 		this.id = id;
 	}
 
+	public ProductColorEntity() {
+		super();
+	}
+
+	public ProductColorEntity(ProductColorKey id, ProductEntity product, ColorEntity color, Long stock) {
+		super();
+		this.id = id;
+		this.product = product;
+		this.color = color;
+		this.stock = stock;
+	}
+
 }

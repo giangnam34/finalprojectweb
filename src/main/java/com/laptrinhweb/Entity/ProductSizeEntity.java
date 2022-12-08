@@ -66,4 +66,16 @@ public class ProductSizeEntity {
 		this.id = id;
 	}
 
+	public ProductSizeEntity() {
+		super();
+	}
+
+	public ProductSizeEntity(ProductSizeKey id, ProductEntity product, SizeEntity size, Long quantity) {
+		super();
+		this.id = id;
+		this.product = product;
+		this.size = size;
+		this.quantity = quantity;
+	}
+
 }
