@@ -60,9 +60,9 @@
             <nav class="header__menu mobile-menu">
                <ul>
                   <li id="menu-home"><a href="./home">Trang chủ</a></li>
-                  <li id="menu-shop"><a href="./shop?cid=1">Shop</a></li>
-                  <li id="menu-pages"><a href="./blog">Blogs</a></li>
-                  <li id="menu-contact"><a href="./contact">Liên hệ</a></li>
+                  <li id="menu-shop"><a href="./shop">Shop</a></li>
+                  <li id="menu-pages"><a href="/blog">Blogs</a></li>
+                  <li id="menu-contact"><a href="/contact">Liên hệ</a></li>
                </ul>
             </nav>
          </div>

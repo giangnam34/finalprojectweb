@@ -56,8 +56,8 @@
             <div class="col-md-3">
                 <div class="shop__sidebar">
                     <div class="shop__sidebar__search">
-                        <form action="#">
-                            <input type="text" placeholder="Tìm sản phẩm..." id="searchinput">
+                        <form action="/shop">
+                            <input type="text" placeholder="Tìm sản phẩm..." id="searchinput" name = "search">
                             <button type="submit"><span class="icon_search"></span></button>
                         </form>
                     </div>
@@ -65,30 +65,47 @@
                         <div class="accordion" id="accordionExample">
                             <div class="card">
                                 <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseOne">Danh mục sản phẩm</a>
+                                    <a data-toggle="collapse" data-target="#collapseOne">Nhãn hiệu</a>
                                 </div>
                                 <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div class="shop__sidebar__categories">
                                             <ul class="nice-scroll">
-                                                <c:forEach items="${cateList}" var="o">
-                                                    <li><a href="shop?cid=${o.id}">${o.name}</a></li>
+                                                <c:forEach items="${brandlist}" var="o">
+                                                    <li><a href="/shop?brandname=${o.getName()}">${o.getName()}</a></li>
                                                 </c:forEach>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="card">
-                                <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseThree">Giá sản phẩm</a>
+                                <div id = "sortcategory" class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseTwo">Loại giày</a>
                                 </div>
-                                <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                <div id="collapseTwo" class="collapse show" data-parent="#sortcategory">
                                     <div class="card-body">
                                         <div class="shop__sidebar__price">
-                                            <ul class="product-price-list">
-                                                <li><a href="./shop">Tăng dần</a></li>
-                                                <li><a href="./sap-xep-giam">Giảm dần</a></li>
+                                            <ul class="nice">
+                                                <li><a href="/shop?category=Men">Giày Nam</a></li>
+                                                <li><a href="/shop?category=Women">Giày Nữ</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div id = "sortprice" class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseThree">Giá sản phẩm</a>
+                                </div>
+                                <div id="collapseThree" class="collapse show" data-parent="#sortprice">
+                                    <div class="card-body">
+                                        <div class="shop__sidebar__price">
+                                            <ul class="nice">
+                                                <li><a href="/shop?sort=inc">Từ thấp đến cao</a></li>
+                                                <li><a href="/shop?sort=dec">Từ cao đến thấp</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -113,24 +130,26 @@
                     </div>
                 </div>
                 <div class="row product-item-all">
-                    <c:forEach items="${productList}" var="p">
+                    <c:forEach items="${allproduct}" var="p">
                         <div class="col-lg-4 col-md-3 col-sm-6 product-item">
                             <div class="block product no-border z-depth-2-top z-depth-2--hover">
                                 <div class="block-image">
-                                    <a href="./product-detail?pid=${p.id}">
-                                        <img src="${p.image}" class="img-center">
+                                    <a href="./product-detail?pid=${p.getId()}">
+                                        <img src="${p.getImage()}" class="img-center">
                                     </a>
+              
                                     <span
-                                            class="product-ribbon product-ribbon-right product-ribbon--style-1 bg-blue text-uppercase">${p.size}</span>
+                                            class="product-ribbon product-ribbon-right product-ribbon--style-1 bg-blue text-uppercase">${p.getDiscount()}%</span>
+                                    
                                 </div>
                                 <div class="block-body text-center">
                                     <h2 class="product__name">
                                         <a href="#">
-                                                ${p.name}
+                                                ${p.getName()}
                                         </a>
                                     </h2>
                                     <p class="product-description">
-                                            ${p.price}
+                                            ${p.getPrice()} VNĐ
                                     </p>
                                     <div class="product-buttons mt-4">
                                         <div class="row align-items-center">
@@ -138,14 +157,17 @@
                                                 <button type="button" class="btn-icon" data-toggle="tooltip"
                                                         data-placement="top" title=""
                                                         data-original-title="Favorite">
-                                                    <a href="./product-detail?pid=${p.id}"><i
+                                                    <a href="./product-detail?pid=${p.getId()}"><i
                                                             class="fa fa-search"></i></a>
                                                 </button>
                                             </div>
-                                            <div class="col-10">
-                                                <button type="button"
+                                            <div id = "button cart" class="col-10">
+                                                 <button type="button"
                                                         class="add-to-cart btn btn-block btn-primary btn-circle btn-icon-left">
-                                                    <a href="./cart?pid=${p.id}&username=${userLogged.username}"><i class="fa fa-shopping-cart"></i>Add to cart </a>
+                                                    <a href="./cart?pid=${p.getId()}&username=${userLogged.username}">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    Add to cart
+                                                    </a>
                                                 </button>
                                             </div>
                                         </div>

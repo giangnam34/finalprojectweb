@@ -49,7 +49,7 @@
                <div class="tab-content">
                   <div class="tab-pane active" id="tabs-1" role="tabpanel">
                      <div class="product__details__pic__item">
-                        <img src="${product.image}" alt="">
+                        <img src="${product.getImage()}" alt="">
                      </div>
                   </div>
                   <div class="tab-pane" id="tabs-2" role="tabpanel">
@@ -75,13 +75,13 @@
                   <div class="row d-flex justify-content-center">
                      <div class="col-lg-8">
                         <div class="product__details__text">
-                           <h4>${product.name}</h4>
-                           <h3>${product.price} <span>${product.discount}</span></h3>
-                           <p>${product.description}</p>
+                           <h4>${product.getName()}</h4>
+                           <h3>${product.getPrice()} <span>${product.getDiscount()}</span></h3>
+                           <p>${product.getDescription()}</p>
                            <div class="product__details__option">
                               <div class="product__details__option__size">
                                  <span>Size:</span>
-                                 <label for="xxl">${product.size}
+                                 <label for="xxl">${product.getSize().get(0)}
                                     <input type="radio" id="xxl">
                                  </label>
                               </div>
@@ -98,7 +98,7 @@
 <%--                                    <input type="text" value="1">--%>
 <%--                                 </div>--%>
 <%--                              </div>--%>
-                              <a href="cart?pid=${product.id}&username=${userLogged.username}" class="primary-btn">Thêm vào giỏ hàng</a>
+                              <a href="cart?pid=${product.getId()}&username=${userLogged.username}" class="primary-btn">Thêm vào giỏ hàng</a>
                            </div>
                            <div class="product__details__btns__option">
                               <p><i class="fa fa-heart"></i> Niềm tin khách hàng</p>
@@ -107,8 +107,8 @@
                            <div class="product__details__last__option">
                               <h5><span>Guaranteed Safe Checkout</span></h5>
                               <ul>
-                                 <li><span>Mã sản phẩm:</span> ${product.id}</li>
-                                 <li><span>Thương hiệu:</span> ${product.brand}</li>
+                                 <li><span>Mã sản phẩm:</span> ${product.getId()}</li>
+                                 <li><span>Thương hiệu:</span> ${product.getBrand()}</li>
                               </ul>
                            </div>
                         </div>

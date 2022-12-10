@@ -18,10 +18,10 @@ import com.laptrinhweb.Key.MyLoginKey;
 //@IdClass(MyLoginKey.class)
 public class LoginEntity {
 	@Id
-	@Column(name = "username")
+	@Column(name = "username", length = 32)
 	private String username;
 
-	@Column(name = "password")
+	@Column(name = "password", length = 128)
 	private String password;
 
 	@Column()

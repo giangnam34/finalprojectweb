@@ -1423,10 +1423,10 @@ ol {
 	transition: all, 0.3s;
 }
 
-.shop__sidebar__tags a:hover {
+ .shop__sidebar__tags a:hover {
 	background: #111111;
 	color: #ffffff;
-}
+} 
 
 .shop__sidebar__accordion .card-heading a:after,
 .shop__sidebar__accordion .card-heading>a.active[aria-expanded=false]:after {
