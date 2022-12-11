@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//src/main/webapp/WEB-INF/jsp/admin/account-profile.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/admin/account.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/admin/category-update.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/admin/category.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/admin/header.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/admin/index.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/admin/order.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/admin/product-update.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/admin/product.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/admin/store-update.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/admin/store.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/vendor/index.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/vendor/order.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/vendor/product-update.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/vendor/product.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/vendor/storeInfo.jsp=UTF-8
