@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -58,8 +59,8 @@
             <div class="d-flex flex-column align-items-center text-center">
               <img src="assets/img/shop/For-Men.png" alt="Admin" class="rounded-circle" width="150">
               <div class="mt-3">
-                <h4>${userLogged.name}</h4>
-                <p class="text-muted font-size-sm">${userLogged.address}</p>
+                <h4>${userLogged.getFullname()}</h4>
+                <p class="text-muted font-size-sm">${userLogged.getAddress()}</p>
               </div>
             </div>
           </div>
@@ -67,18 +68,18 @@
       </div>
       <div class="col-lg-8">
         <div class="card">
-          <form class="card-body" method="post" action="update-profile">
+          <form class="card-body" method="get" action="<c:url value="/update"></c:url>">
             <div class="row mb-3">
               <div class="col-sm-3">
                 <h6 class="mb-0">Username</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" id="user-name" name="username" disabled value="${userLogged.username}">
+                <input type="text" class="form-control" id="user-name" name="username" value="${userLogged.getUsername()}" readonly="readonly">
               </div>
             </div>
             <div class="row mb-3">
               <div class="col-sm-3">
-                <h6 class="mb-0">Họ & tên</h6>
+                <h6 class="mb-0">Họ và tên</h6>
               </div>
               <div class="col-sm-9 text-secondary">
                 <input type="text" class="form-control" id="customer-name" name="name">
@@ -97,7 +98,11 @@
                 <h6 class="mb-0">Giới tính</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" id="customer-sex" name="sex">
+	              <select name="sex">
+	              	<option lable = " ">Chọn giới tính</option>
+				    <option value="Nam">Nam</option>
+				    <option value="Nữ">Nữ</option>
+				  </select>
               </div>
             </div>
             <div class="row mb-3">

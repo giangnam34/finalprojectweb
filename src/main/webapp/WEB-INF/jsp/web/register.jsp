@@ -44,6 +44,10 @@
                        placeholder="Tên đăng nhập" />
             </div>
             <div class="input-control">
+                <input name="email" id="email" type="text"
+                       placeholder="Email" />
+            </div>
+            <div class="input-control">
                 <input name="phone" id="phone" type="text"
                        placeholder="Số điện thoại" />
             </div>
@@ -61,7 +65,7 @@
                     for="gender-others">Khác</label>
 						</span>
             </div>
-            <p class="message-text-fail">${messageRegisterFail}</p>
+            <%-- <p class="message-text-fail">${messageRegisterFail}</p> --%>
             <p class="message-text-success">${messageRegisterSuccess}</p>
             <button type="submit" class="submit">Đăng ký</button>
         </form>

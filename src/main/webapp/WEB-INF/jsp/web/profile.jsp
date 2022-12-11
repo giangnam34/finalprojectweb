@@ -77,6 +77,16 @@
 <!-- Breadcrumb Section End -->
 
 <!-- Contact Section Begin -->
+<c:if test = "${messagesuccess != null}">
+<div class="alert alert-success text-center">
+	${messagesuccess}
+</div>
+</c:if>
+<c:if test = "${messagefail != null}">
+<div class="alert alert-danger text-center">
+	${messagefail}
+</div>
+</c:if>
 <div class="container">
     <div class="spad">
         <div class="row">
@@ -88,8 +98,8 @@
                             <img src="assets/img/shop/For-Men.png" alt="Admin"
                                  class="rounded-circle" width="150">
                             <div class="mt-3">
-                                <h4>${userLogged.name}</h4>
-                                <p class="text-muted font-size-sm">${userLogged.address}</p>
+                                <h4>${userLogged.getFullname()}</h4>
+                                <p class="text-muted font-size-sm">${userLogged.getAddress()}</p>
                             </div>
                         </div>
                     </div>
@@ -102,21 +112,21 @@
                             <div class="col-sm-3">
                                 <h6 class="mb-0">Họ & tên</h6>
                             </div>
-                            <div class="col-sm-9 text-secondary">${userLogged.name}</div>
+                            <div class="col-sm-9 text-secondary">${userLogged.getFullname()}</div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
                                 <h6 class="mb-0">Số điện thoại</h6>
                             </div>
-                            <div class="col-sm-9 text-secondary">${userLogged.phone}</div>
+                            <div class="col-sm-9 text-secondary">${userLogged.getPhone()}</div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
                                 <h6 class="mb-0">Giới tính</h6>
                             </div>
-                            <div class="col-sm-9 text-secondary">${userLogged.gender}
+                            <div class="col-sm-9 text-secondary">${userLogged.getSex()}
                             </div>
                         </div>
                         <hr>
@@ -125,7 +135,7 @@
                                 <h6 class="mb-0">Địa chỉ</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                ${userLogged.address}</div>
+                                ${userLogged.getAddress()}</div>
                         </div>
                         <hr>
                         <div class="row">
@@ -141,7 +151,7 @@
             </div>
         </div>
         <!--  Hiển thị đơn hàng đã mua -->
-        <div class="row">
+       <%--  <div class="row">
             <div class="container mt-5">
                 <div class="d-flex justify-content-center row">
                     <div class="col-md-10">
@@ -216,8 +226,8 @@
                                                onclick="hide(${order.id})" style="font-size: 20px;"></i></td>
                                     </tr>
 
-                                        <%--											<div type="table" class="table" id="${order.id}">--%>
-                                        <%--												<table class="table details" ">--%>
+                                        											<div type="table" class="table" id="${order.id}">
+                                        												<table class="table details" ">
                                     <tr >
                                     <thead id="${order.id}" class="details">
                                     <tr>
@@ -246,8 +256,8 @@
                                         </tr>
                                     </c:forEach>
                                     </tbody>
-                                        <%--												</table>--%>
-                                        <%--												</div>--%>
+                                        												</table>
+                                        												</div>
                                     </tr>
                                     </c:forEach>
                                     </tbody>
@@ -258,7 +268,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --%>
     </div>
 </div>
 

@@ -33,7 +33,7 @@
 <!-- Header Section End -->
 <div class="wrapper">
     <div class="cont">
-        <form class="form sign-in" method="post" action="login">
+    <form action="<c:url value="/j_spring_security_check"></c:url>" method="POST" class = "form sign-in">
             <h2>WELCOME TO SOMORE STORE</h2>
             <div class="input-control">
                 <input name="username" id="name" type="text" placeholder="Username"

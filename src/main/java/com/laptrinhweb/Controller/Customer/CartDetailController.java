@@ -1,4 +1,4 @@
-package com.laptrinhweb.Controller.Guest;
+package com.laptrinhweb.Controller.Customer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.laptrinhweb.Service.Implementation.UserDetailService;
 
 @Controller
-public class ContactController {
+public class CartDetailController {
 	@Autowired
 	UserDetailService userDetailService;
 	
-	@GetMapping("/contact")
-	public String Contact(Authentication authentication, Model model) {
+	@GetMapping("/cartdetail")
+	public String cartdetail(Authentication authentication, Model model) {
 		if (authentication != null) model.addAttribute("userLogged", userDetailService.detailUser(authentication.getName()));
-		return "contact";
+		return "shopping-cart";
 	}
 }

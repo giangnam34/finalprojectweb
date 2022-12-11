@@ -50,6 +50,16 @@
 <!-- Breadcrumb Section End -->
 
 <!-- Shop Section Begin -->
+<c:if test = "${messagesuccess != null}">
+<div class="alert alert-success text-center">
+	${messagesuccess}
+</div>
+</c:if>
+<c:if test = "${messagefail != null}">
+<div class="alert alert-danger text-center">
+	${messagefail}
+</div>
+</c:if>
 <section class="shop spad">
     <div class="container">
         <div class="row">

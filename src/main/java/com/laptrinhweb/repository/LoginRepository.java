@@ -7,6 +7,5 @@ import com.laptrinhweb.Entity.LoginEntity;
 
 
 @Repository
-public interface LoginRepository extends JpaRepository<LoginEntity, Long> {
-
+public interface LoginRepository extends JpaRepository<LoginEntity, String> {
 }

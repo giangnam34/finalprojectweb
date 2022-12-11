@@ -68,11 +68,11 @@
          </div>
          <div class="col-lg-3 col-md-3">
             <div class="header__nav__option mobile-menu">
-               <div class="header__nav-username">Hi!<b> ${userLogged.name}</b></div>
+               <div class="header__nav-username">Hi!<b> ${userLogged.getFullname()}</b></div>
                <div class="header__nav-avatar">
                   <a href="profile"><img src="assets/img/shop/For-Men.png" alt=""></a>
                </div>
-               <a href="cartdetail?username=${userLogged.username}&type=view"><img src="assets/img/icon/cart.png" alt=""> <span></span></a>
+               <a href="cartdetail?username=${userLogged.getUsername()}&type=view"><img src="assets/img/icon/cart.png" alt=""> <span></span></a>
             </div>
          </div>
       </div>
