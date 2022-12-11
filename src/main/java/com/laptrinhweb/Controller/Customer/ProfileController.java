@@ -1,5 +1,7 @@
 package com.laptrinhweb.Controller.Customer;
 
+import java.util.List;
+
 import org.apache.logging.log4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,9 +9,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.laptrinhweb.DTO.ProductDTO;
 import com.laptrinhweb.Service.Implementation.UserDetailService;
 
 @Controller
@@ -24,7 +28,9 @@ public class ProfileController {
 		 * logger.error(userDetailService.detailUser(authentication.getName()).
 		 * getFullname());
 		 */
-		if (authentication != null) model.addAttribute("userLogged", userDetailService.detailUser(authentication.getName()));
+		if (authentication != null) {
+			model.addAttribute("userLogged", userDetailService.detailUser(authentication.getName()));
+		}
 		return "profile";
 	}
 	
@@ -64,16 +70,5 @@ public class ProfileController {
 		return "redirect:/profile";
 	}
 	
-	@GetMapping("/cart")
-	public String addProductToCart(Authentication authentication, Model model,
-								   @RequestParam(name = "pid", required = true) String pid,
-								   @RequestParam(name = "username", required = true) String username,
-								   RedirectAttributes redirectAttributes) {
-		String result = userDetailService.addProductToCart(pid, username, 1L);
-		if (result.equals("Thêm sản phẩm vào giỏ hàng thành công!!!")) {
-			redirectAttributes.addFlashAttribute("messagesuccess", result);
-		}
-		else redirectAttributes.addFlashAttribute("messagefail", result);
-		return "redirect:/shop";
-	}
+	
 }

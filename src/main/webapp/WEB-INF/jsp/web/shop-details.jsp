@@ -32,6 +32,16 @@
 <!-- Header Section End -->
 
 <!-- Shop Details Section Begin -->
+<c:if test = "${messagesuccess != null}">
+<div class="alert alert-success text-center">
+	${messagesuccess}
+</div>
+</c:if>
+<c:if test = "${messagefail != null}">
+<div class="alert alert-danger text-center">
+	${messagefail}
+</div>
+</c:if>
 <section class="shop-details">
    <div class="product__details__pic">
       <div class="container">
@@ -98,7 +108,7 @@
 <%--                                    <input type="text" value="1">--%>
 <%--                                 </div>--%>
 <%--                              </div>--%>
-                              <a href="cart?pid=${product.getId()}&username=${userLogged.username}" class="primary-btn">Thêm vào giỏ hàng</a>
+                              <a href="/addcart?pid=${product.getId()}&username=${userLogged.username}" class="primary-btn">Thêm vào giỏ hàng</a>
                            </div>
                            <div class="product__details__btns__option">
                               <p><i class="fa fa-heart"></i> Niềm tin khách hàng</p>

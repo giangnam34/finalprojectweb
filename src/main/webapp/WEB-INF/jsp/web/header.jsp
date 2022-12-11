@@ -40,7 +40,8 @@
                            <a href="logout">Đăng xuất</a>
                         </c:when>
                         <c:otherwise>
-                           <a href="login">Đăng nhập / Đăng ký</a>
+                           <a href="login">Đăng nhập</a>
+                           <a href="register">Đăng ký</a>
                         </c:otherwise>
                      </c:choose>
                   </div>

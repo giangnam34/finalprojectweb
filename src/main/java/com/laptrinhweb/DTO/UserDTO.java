@@ -1,5 +1,10 @@
 package com.laptrinhweb.DTO;
 
+import java.util.List;
+
+import com.laptrinhweb.Entity.OrderEntity;
+import com.laptrinhweb.Entity.ProductOrderEntity;
+
 public class UserDTO {
 	private Long id;
 	private String address;
@@ -10,6 +15,7 @@ public class UserDTO {
 	private String sex;
 	private Boolean status;
 	private String username;
+	private List<ProductOrderEntity> orders;
 	public Long getId() {
 		return id;
 	}
@@ -63,6 +69,12 @@ public class UserDTO {
 	}
 	public void setUsername(String username) {
 		this.username = username;
+	}
+	public List<ProductOrderEntity> getOrders() {
+		return orders;
+	}
+	public void setOrders(List<ProductOrderEntity> orders) {
+		this.orders = orders;
 	}
 	public UserDTO() {
 		super();

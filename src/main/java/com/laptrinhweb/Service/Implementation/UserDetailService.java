@@ -1,5 +1,7 @@
 package com.laptrinhweb.Service.Implementation;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -117,5 +119,44 @@ public class UserDetailService implements IUserDetailService{
 			logger.error(e.toString());
 			return "Thêm sản phẩm vào giỏ hàng thất bại!!!";
 		}
+	}
+	@Override
+	public String removeProductToCart(String pid, String username) {
+		try {
+			OrderEntity orderEntity = new OrderEntity();
+			LoginEntity loginEntity = loginRepository.findById(username).get();
+			CustomerEntity userEntity = loginEntity.getCustomer();
+			ProductEntity productEntity = productRepository.findById(Long.parseLong(pid)).get();
+			for (OrderEntity x: orderRepository.findAll()) {
+				if (x.getCustomer().getId() == userEntity.getId() ) {
+					orderEntity = x;
+				}
+			}
+			List <ProductOrderEntity> product_list = productOrderRepository.findAll();
+			for (ProductOrderEntity x : product_list) {
+				if (x.getProduct().getId() == productEntity.getId() && x.getOrder().getId() == orderEntity.getId()) {
+					orderEntity.setTotal_price(orderEntity.getTotal_price() - x.getQuantity()*productEntity.getMoney());
+					orderRepository.save(orderEntity);
+					productOrderRepository.delete(x);
+				}
+			}
+			return "Xóa sản phẩm khỏi giỏ hàng thành công!!!";
+		} catch (Exception e) {
+			return "Xóa sản phẩm khỏi giỏ hàng thất bại!!!";
+		}
+	}
+	
+	@Override
+	public Long total(String username) {
+		OrderEntity orderEntity = new OrderEntity();
+		LoginEntity loginEntity = loginRepository.findById(username).get();
+		CustomerEntity userEntity = loginEntity.getCustomer();
+		for (OrderEntity x: orderRepository.findAll()) {
+			if (x.getCustomer().getId() == userEntity.getId() ) {
+				orderEntity = x;
+			}
+		}
+		if (orderEntity.getCustomer() != null) return orderEntity.getTotal_price();
+		else return 0L;
 	}
 }

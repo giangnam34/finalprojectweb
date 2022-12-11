@@ -10,4 +10,8 @@ public interface IUserDetailService {
 
 	String addProductToCart(String pid, String username, Long quantity);
 
+	Long total(String username);
+
+	String removeProductToCart(String pid, String username);
+
 }

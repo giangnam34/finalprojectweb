@@ -60,6 +60,16 @@
 
 
 <!-- Shopping Cart Section Begin -->
+<c:if test = "${messagesuccess != null}">
+<div class="alert alert-success text-center">
+	${messagesuccess}
+</div>
+</c:if>
+<c:if test = "${messagefail != null}">
+<div class="alert alert-danger text-center">
+	${messagefail}
+</div>
+</c:if>
 <section class="shopping-cart spad">
    <div class="container">
       <div class="row">
@@ -70,7 +80,7 @@
                   <table>
                      <thead>
                      <tr>
-                        <th>${cl.name}</th>
+                        <th>${cl.getProduct().getName()}</th>
                         <th>Số lượng</th>
                         <th>Giá</th>
                         <th></th>
@@ -80,31 +90,31 @@
                      <tr>
                         <td class="product__cart__item">
                            <div class="product__cart__item__pic">
-                              <img src="${cl.image}" alt="">
+                              <img src="${cl.getProduct().getImages().get(0)}" alt="">
                            </div>
                            <div class="product__cart__item__text">
-                              <h6>${cl.brand}</h6>
-                              <h5>${cl.price}</h5>
+                              <h6>${cl.getProduct().getBrand().getName()}</h6>
+                              <h5>${cl.getProduct().getMoney()}</h5>
                            </div>
                         </td>
                         <td class="quantity__item">
                            <div class="quantity">
                               <div class="form-group d-flex justify-content-between">
                                  <c:choose>
-                                    <c:when test="${cl.quantity>1}">
-                                       <a class = "btn btn-sm btn-decre"  href = "updateCart?pid=${cl.id}&username=${userLogged.username}&quantity=${cl.quantity}&type=dec"><i class="fa fa-minus"></i></a>
+                                    <c:when test="${cl.getQuantity()>1}">
+                                       <a class = "btn btn-sm btn-decre"  href = "/updatecart?pid=${cl.getProduct().getId()}&username=${userLogged.username}&quantity=-1&type=dec"><i class="fa fa-minus"></i></a>
                                     </c:when>
                                  </c:choose>
-                                 <input type="text" style="text-align: center" name="quantityCart" value=${cl.quantity} readonly>
-                                 <a class = "btn btn-sm btn-incre" href = "updateCart?pid=${cl.id}&username=${userLogged.username}&quantity=${cl.quantity}&type=inc"><i class="fa fa-plus"></i></a>
+                                 <input type="text" style="text-align: center" name="quantityCart" value=${cl.getQuantity()} readonly>
+                                 <a class = "btn btn-sm btn-incre" href = "/updatecart?pid=${cl.getProduct().getId()}&username=${userLogged.username}&quantity=1&type=inc"><i class="fa fa-plus"></i></a>
                               </div>
                            </div>
                         </td>
                         <td class="cart__price">
-                           <p>${cl.quantity*cl.price}</p>
+                           <p>${cl.getQuantity()*cl.getProduct().getMoney()}</p>
                         </td>
                         <td class="cart__close"><a
-                                href="cartdetail?username=${userLogged.username}&type=delete&pid=${cl.id}"><button
+                                href="/deletecart?username=${userLogged.username}&pid=${cl.getProduct().getId()}"><button
                                 style="border-radius: 25%;">
                            <i class="fa fa-close"></i>
                         </button></a></td>
@@ -127,7 +137,7 @@
          </div>
          <div class="col-lg-4">
             <div class="cart__total">
-               <h6>Tổng tiền: ${total} VNĐ</h6>
+               <h6>Tổng tiền: ${totalprice} VNĐ</h6>
                <!-- 						<ul> -->
                <%-- 							<li>Thành tiền: ${total} VNĐ <span id="cart__total"></span></li> --%>
                <!-- 						</ul> -->
