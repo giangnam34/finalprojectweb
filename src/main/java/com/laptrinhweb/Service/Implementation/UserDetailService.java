@@ -1,10 +1,17 @@
 package com.laptrinhweb.Service.Implementation;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.laptrinhweb.Convert.User;
@@ -36,6 +43,20 @@ public class UserDetailService implements IUserDetailService{
 	ProductRepository productRepository;
 	@Autowired
 	ProductOrderRepository productOrderRepository;
+	@Autowired    
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	@Autowired
+	private CheckLogic checklogic;
+	
+	@Override
+	public List <UserDTO> getAllUser(){
+		List <UserDTO> result = new ArrayList<UserDTO>();
+		List<CustomerEntity> list = userRepository.findAll();
+		for (CustomerEntity x: list) {
+			result.add(user.toDTO(x));
+		}
+		return result;
+	}
 	
 	@Override
 	public UserDTO detailUser(String username) {
@@ -50,21 +71,33 @@ public class UserDetailService implements IUserDetailService{
 	@Override
 	public String updateInfoUser(String username, String fullname, String phone, String sex, String address) {
 		try {
+		//System.out.println(checklogic.checkStringAlphabet("Võ Giang Nam"));
 		LoginEntity loginEntity = loginRepository.findById(username).get();
 		CustomerEntity userEntity = loginEntity.getCustomer();
-		if (fullname.isEmpty() && phone.isEmpty() && sex.equals("Chọn giới tính") && address.isEmpty()) return "Vui lòng nhập thông tin cần chỉnh sửa!";
+		if (fullname.isEmpty() && phone.isEmpty() && sex.equals("Chọn giới tính") && address.isEmpty()) return "Vui lòng nhập thông tin cá nhân chính xác!";
+		
+		//Fix lỗ hổng XSS
+		
+		  if(!(checklogic.checkStringAlphabet(fullname.toLowerCase()) &&
+		  checklogic.checkStringNumber(phone.toLowerCase()) &&
+		  checklogic.checkStringAlphabet(address.toLowerCase()) )) { return
+		  "Cập nhật thất bại!!!"; }
+		 
 		if (fullname != "") userEntity.setName(fullname);
+		
 		if (phone != "") userEntity.setPhone(phone);
+		
 		if (sex != "") {
 			if (sex.equals("Nam")) userEntity.setSex(true);
-			else userEntity.setSex(false);
+			else if (sex.equals("Nữ")) userEntity.setSex(false);
 		}
+		
 		if (address != "") userEntity.setAddress(address);
 		userRepository.save(userEntity);
 		return "Cập nhật thành công!!!";
 		}
 		catch(Exception e) {
-			return "Cập nhất thất bại!!!";
+			return "Cập nhật thất bại!!!";
 		}
 	}
 	
@@ -82,7 +115,7 @@ public class UserDetailService implements IUserDetailService{
 		}
 		if (orderEntity.getCustomer() == null) {
 			orderEntity.setCustomer(userEntity);
-			orderEntity.setPayment_status(false);
+			orderEntity.setPayment_status("Đang mua hàng!!!");
 			orderEntity.setDiscount(0.0);
 			orderEntity.setTotal_price(0L);
 			orderRepository.save(orderEntity);
@@ -158,5 +191,84 @@ public class UserDetailService implements IUserDetailService{
 		}
 		if (orderEntity.getCustomer() != null) return orderEntity.getTotal_price();
 		else return 0L;
+	}
+	
+	@Override
+	public List<OrderEntity> getAllOrder(String username){
+		OrderEntity orderEntity = new OrderEntity();
+		LoginEntity loginEntity = loginRepository.findById(username).get();
+		CustomerEntity userEntity = loginEntity.getCustomer();
+		return userEntity.getOrders();
+	}
+	@Override
+	public OrderEntity getCart(String username) {
+		OrderEntity orderEntity = new OrderEntity();
+		LoginEntity loginEntity = loginRepository.findById(username).get();
+		CustomerEntity userEntity = loginEntity.getCustomer();
+		for (OrderEntity x: orderRepository.findAll()) {
+			if (x.getCustomer().getId() == userEntity.getId())
+				orderEntity = x;
+		}
+		return orderEntity;
+	}
+	@Override
+	public String confirmcart(String username) {
+		try {
+			LoginEntity loginEntity = loginRepository.findById(username).get();
+			CustomerEntity userEntity = loginEntity.getCustomer();
+			OrderEntity orderEntity = getCart(username);
+			orderEntity.setPayment_status("Đang chờ xác nhận!!!");
+			orderRepository.save(orderEntity);
+			OrderEntity neworder = new OrderEntity();
+			neworder.setCustomer(userEntity);
+			neworder.setPayment_status("Đang mua hàng");
+			neworder.setTotal_price(0L);
+			neworder.setDiscount(0.0);
+			orderRepository.save(neworder);
+			return "Đặt hàng thành công!!!";
+		} catch (Exception e) {
+			return "Đặt hàng thất bại!!!";
+		}
+	}
+	@Override
+	public String changepassword(String username, String oldpassword, String newpassword, String confirm) {
+		try {
+		Logger logger = LoggerFactory.getLogger(UserDetailService.class);
+		Boolean flag = false;
+		LoginEntity login = new LoginEntity();
+		for (LoginEntity x: loginRepository.findAll()) {
+			if (x.getUsername().equals(username)) {
+				flag = true;
+				login = x;
+			}
+		}
+		if (!flag) return "Sai tên đăng nhập!!!";
+		if (bCryptPasswordEncoder.matches(oldpassword,login.getPassword())) {
+			if (newpassword.equals(confirm)) {
+				login.setPassword(bCryptPasswordEncoder.encode(newpassword));
+				loginRepository.save(login);
+				return "Đặt lại mật khẩu thành công!!!";
+			}
+		}
+		else return "Sai mật khẩu!!!";
+		return null;
+		} catch (Exception e) {
+			return "Đặt lại mật khẩu thất bại!!!";
+		}
+	}
+	@Override
+	public String adminconfirmcart(String customerid) {
+		try {
+		OrderEntity orderEntity = new OrderEntity();
+		for (OrderEntity x: orderRepository.findAll()) {
+			if (x.getCustomer().getId() == Long.parseLong(customerid))
+				orderEntity = x;
+		}
+		orderEntity.setPayment_status("Đã xác nhận giao hàng, vui lòng kiểm tra điện thoại thường xuyên!!!");
+		orderRepository.save(orderEntity);
+		return "Xác nhận giao hàng thành công!!!";
+		} catch (Exception e) {
+			return "Xác nhận giao hàng thất bại!!!";
+		}
 	}
 }

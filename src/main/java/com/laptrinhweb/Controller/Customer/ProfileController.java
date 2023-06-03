@@ -30,6 +30,7 @@ public class ProfileController {
 		 */
 		if (authentication != null) {
 			model.addAttribute("userLogged", userDetailService.detailUser(authentication.getName()));
+			model.addAttribute("orderlist", userDetailService.getAllOrder(authentication.getName()));
 		}
 		return "profile";
 	}
@@ -70,5 +71,25 @@ public class ProfileController {
 		return "redirect:/profile";
 	}
 	
+	@GetMapping("/change-password")
+	String changepassword(Authentication authentication, Model model) {
+		if (authentication != null) model.addAttribute("userLogged", userDetailService.detailUser(authentication.getName()));
+		return "change_pass";
+	}
+	
+	@GetMapping("/changepassword")
+	String change(Authentication authentication, Model model, RedirectAttributes redirectAttributes,
+			    @RequestParam(name = "username", required = true) String username,
+				@RequestParam(name = "password-old", required = false) String oldpassword,
+				@RequestParam(name = "password-new", required = false) String newpassword,
+				@RequestParam(name = "password-retype", required = false) String confirm) {
+		String result = userDetailService.changepassword(username, oldpassword, newpassword, confirm);
+		if (result.equals("Đặt lại mật khẩu thành công!!!")) {
+			redirectAttributes.addFlashAttribute("messagesuccess", result);
+		}
+		else redirectAttributes.addFlashAttribute("messagefail", result);
+		
+		return "redirect:/change-password";
+	}
 	
 }

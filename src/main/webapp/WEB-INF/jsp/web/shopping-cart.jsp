@@ -18,21 +18,21 @@
            rel="stylesheet">
 
    <!-- Css Styles -->
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css"
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/bootstrap.min.css"
          type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/font-awesome.min.css"
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/font-awesome.min.css"
          type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/elegant-icons.css"
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/elegant-icons.css"
          type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/magnific-popup.css"
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/magnific-popup.css"
          type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/nice-select.css"
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/nice-select.css"
          type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/owl.carousel.min.css"
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/owl.carousel.min.css"
          type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/slicknav.min.css"
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/slicknav.min.css"
          type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -90,7 +90,7 @@
                      <tr>
                         <td class="product__cart__item">
                            <div class="product__cart__item__pic">
-                              <img src="${cl.getProduct().getImages().get(0)}" alt="">
+                              <img src="${cl.getProduct().getImages().get(0).getImage()}" alt="">
                            </div>
                            <div class="product__cart__item__text">
                               <h6>${cl.getProduct().getBrand().getName()}</h6>
@@ -101,7 +101,7 @@
                            <div class="quantity">
                               <div class="form-group d-flex justify-content-between">
                                  <c:choose>
-                                    <c:when test="${cl.getQuantity()>1}">
+                                    <c:when test="${cl.getQuantity()}>=1">
                                        <a class = "btn btn-sm btn-decre"  href = "/updatecart?pid=${cl.getProduct().getId()}&username=${userLogged.username}&quantity=-1&type=dec"><i class="fa fa-minus"></i></a>
                                     </c:when>
                                  </c:choose>
@@ -165,16 +165,16 @@
 <!-- Search End -->
 
 <!-- Js Plugins -->
-<script src="./assets/js/jquery-3.3.1.min.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script>
-<script src="./assets/js/jquery.nice-select.min.js"></script>
-<script src="./assets/js/jquery.nicescroll.min.js"></script>
-<script src="./assets/js/jquery.magnific-popup.min.js"></script>
-<script src="./assets/js/jquery.countdown.min.js"></script>
-<script src="./assets/js/jquery.slicknav.js"></script>
-<script src="./assets/js/mixitup.min.js"></script>
-<script src="./assets/js/owl.carousel.min.js"></script>
-<script src="./assets/js/main.js"></script>
+<script src="./web/assets/js/jquery-3.3.1.min.js"></script>
+<script src="./web/assets/js/bootstrap.min.js"></script>
+<script src="./web/assets/js/jquery.nice-select.min.js"></script>
+<script src="./web/assets/js/jquery.nicescroll.min.js"></script>
+<script src="./web/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="./web/assets/js/jquery.countdown.min.js"></script>
+<script src="./web/assets/js/jquery.slicknav.js"></script>
+<script src="./web/assets/js/mixitup.min.js"></script>
+<script src="./web/assets/js/owl.carousel.min.js"></script>
+<script src="./web/assets/js/main.js"></script>
 </body>
 
 </html>

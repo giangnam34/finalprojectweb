@@ -7,10 +7,10 @@
          <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="footer__about">
                <div class="footer__logo">
-                  <a href="#"><img src="./assets/img/shop/logomain.png" alt=""></a>
+                  <a href="#"><img src="./web/assets/img/shop/logomain.png" alt=""></a>
                </div>
                <p>Thương hiệu giày bán chạy hàng đầu Việt Nam.</p>
-               <a href="#"><img src="./assets/img/payment.png" alt=""></a>
+               <a href="#"><img src="./web/assets/img/payment.png" alt=""></a>
             </div>
          </div>
          <div class="col-lg-3 offset-lg-1 col-md-3 col-sm-6">

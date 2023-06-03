@@ -21,7 +21,7 @@ public class LoginEntity {
 	@Column(name = "username", length = 32)
 	private String username;
 
-	@Column(name = "password", length = 128)
+	@Column(name = "password", length = 72)
 	private String password;
 
 	@Column()

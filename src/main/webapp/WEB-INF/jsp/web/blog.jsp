@@ -16,14 +16,14 @@
          rel="stylesheet">
 
    <!-- Css Styles -->
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/font-awesome.min.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/elegant-icons.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/magnific-popup.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/nice-select.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/owl.carousel.min.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/slicknav.min.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/bootstrap.min.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/font-awesome.min.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/elegant-icons.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/magnific-popup.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/nice-select.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/owl.carousel.min.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/slicknav.min.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -39,7 +39,7 @@
             <div class="breadcrumb__text">
                <h4>Shop</h4>
                <div class="breadcrumb__links">
-                  <a href="${pageContext.request.contextPath}/index.html">Home</a>
+                  <a href="${pageContext.request.contextPath}web/index.html">Home</a>
                   <span>Blog</span>
                </div>
             </div>
@@ -115,16 +115,16 @@
 <!-- Search End -->
 
 <!-- Js Plugins -->
-<script src="${pageContext.request.contextPath}/assets/js/jquery-3.3.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.nice-select.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.nicescroll.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.magnific-popup.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.countdown.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.slicknav.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/mixitup.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/owl.carousel.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery-3.3.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.nice-select.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.nicescroll.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.countdown.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.slicknav.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/mixitup.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/owl.carousel.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/main.js"></script>
 </body>
 
 </html>

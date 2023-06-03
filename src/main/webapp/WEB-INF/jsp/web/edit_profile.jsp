@@ -16,14 +16,14 @@
         rel="stylesheet">
 
   <!-- Css Styles -->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/elegant-icons.css" type="text/css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/magnific-popup.css" type="text/css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/nice-select.css" type="text/css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/owl.carousel.min.css" type="text/css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/slicknav.min.css" type="text/css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css" type="text/css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/elegant-icons.css" type="text/css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/nice-select.css" type="text/css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/owl.carousel.min.css" type="text/css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/slicknav.min.css" type="text/css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -82,7 +82,7 @@
                 <h6 class="mb-0">Họ và tên</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" id="customer-name" name="name">
+                <input type="text" class="form-control" id="customer-name" name="name" >
               </div>
             </div>
             <div class="row mb-3">
@@ -90,7 +90,7 @@
                 <h6 class="mb-0">Phone</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" id="phone" name="phone">
+                <input type="text" class="form-control" id="phone" name="phone" pattern="[0-9]+">
               </div>
             </div>
             <div class="row mb-3">
@@ -110,7 +110,7 @@
                 <h6 class="mb-0">Địa chỉ</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" id="customer-address" name="address">
+                <input type="text" class="form-control" id="customer-address" name="address"  pattern="[a-z,A-Z]+">
               </div>
             </div>
             <div class="row">
@@ -149,16 +149,16 @@
 </script>
 
 <!-- Js Plugins -->
-<script src="${pageContext.request.contextPath}/assets/js/jquery-3.3.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.nice-select.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.nicescroll.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.magnific-popup.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.countdown.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.slicknav.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/mixitup.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/owl.carousel.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery-3.3.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.nice-select.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.nicescroll.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.countdown.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.slicknav.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/mixitup.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/owl.carousel.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/main.js"></script>
 </body>
 
 </html>

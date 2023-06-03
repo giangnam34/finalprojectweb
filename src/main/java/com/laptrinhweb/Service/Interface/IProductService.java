@@ -17,4 +17,8 @@ public interface IProductService {
 
 	ProductDTO findbyId(String pid);
 
+	String updateProduct(String pid, String name, String price, String discount, String sold);
+
+	String deleteProduct(String pid);
+
 }

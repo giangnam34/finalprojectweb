@@ -10,22 +10,22 @@
             rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css"
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/bootstrap.min.css"
           type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/font-awesome.min.css"
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/font-awesome.min.css"
           type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/elegant-icons.css"
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/elegant-icons.css"
           type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/magnific-popup.css"
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/magnific-popup.css"
           type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/nice-select.css"
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/nice-select.css"
           type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/owl.carousel.min.css"
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/owl.carousel.min.css"
           type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/slicknav.min.css"
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/slicknav.min.css"
           type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/authentication.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/authentication.css">
 </head>
 <body>
 <!-- Header Section Begin-->
@@ -33,7 +33,7 @@
 <!-- Header Section End -->
 <div class="wrapper">
     <div class="cont">
-    <form action="<c:url value="/j_spring_security_check"></c:url>" method="POST" class = "form sign-in">
+    <form action="<c:url value="/login"></c:url>" method="POST" class = "form sign-in">
             <h2>WELCOME TO SOMORE STORE</h2>
             <div class="input-control">
                 <input name="username" id="name" type="text" placeholder="Username"

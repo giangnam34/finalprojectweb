@@ -16,14 +16,14 @@
          rel="stylesheet">
 
    <!-- Css Styles -->
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/font-awesome.min.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/elegant-icons.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/magnific-popup.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/nice-select.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/owl.carousel.min.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/slicknav.min.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/bootstrap.min.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/font-awesome.min.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/elegant-icons.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/magnific-popup.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/nice-select.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/owl.carousel.min.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/slicknav.min.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -64,17 +64,17 @@
                   </div>
                   <div class="tab-pane" id="tabs-2" role="tabpanel">
                      <div class="product__details__pic__item">
-                        <img src="${pageContext.request.contextPath}/assets/img/shop-details/product-big-3.png" alt="">
+                        <img src="${pageContext.request.contextPath}/web/assets/img/shop-details/product-big-3.png" alt="">
                      </div>
                   </div>
                   <div class="tab-pane" id="tabs-3" role="tabpanel">
                      <div class="product__details__pic__item">
-                        <img src="${pageContext.request.contextPath}/assets/img/shop-details/product-big.png" alt="">
+                        <img src="${pageContext.request.contextPath}/web/assets/img/shop-details/product-big.png" alt="">
                      </div>
                   </div>
                   <div class="tab-pane" id="tabs-4" role="tabpanel">
                      <div class="product__details__pic__item">
-                        <img src="${pageContext.request.contextPath}/assets/img/shop-details/product-big-4.png" alt="">
+                        <img src="${pageContext.request.contextPath}/web/assets/img/shop-details/product-big-4.png" alt="">
                         <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1" class="video-popup"><i class="fa fa-play"></i></a>
                      </div>
                   </div>
@@ -153,16 +153,16 @@
 </script>
 
 <!-- Js Plugins -->
-<script src="./assets/js/jquery-3.3.1.min.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script>
-<script src="./assets/js/jquery.nice-select.min.js"></script>
-<script src="./assets/js/jquery.nicescroll.min.js"></script>
-<script src="./assets/js/jquery.magnific-popup.min.js"></script>
-<script src="./assets/js/jquery.countdown.min.js"></script>
-<script src="./assets/js/jquery.slicknav.js"></script>
-<script src="./assets/js/mixitup.min.js"></script>
-<script src="./assets/js/owl.carousel.min.js"></script>
-<script src="./assets/js/main.js"></script>
+<script src="./web/assets/js/jquery-3.3.1.min.js"></script>
+<script src="./web/assets/js/bootstrap.min.js"></script>
+<script src="./web/assets/js/jquery.nice-select.min.js"></script>
+<script src="./web/assets/js/jquery.nicescroll.min.js"></script>
+<script src="./web/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="./web/assets/js/jquery.countdown.min.js"></script>
+<script src="./web/assets/js/jquery.slicknav.js"></script>
+<script src="./web/assets/js/mixitup.min.js"></script>
+<script src="./web/assets/js/owl.carousel.min.js"></script>
+<script src="./web/assets/js/main.js"></script>
 </body>
 
 </html>

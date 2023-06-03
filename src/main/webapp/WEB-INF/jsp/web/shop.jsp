@@ -16,14 +16,14 @@
           rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -66,10 +66,17 @@
             <div class="col-md-3">
                 <div class="shop__sidebar">
                     <div class="shop__sidebar__search">
-                        <form action="/shop">
+                    	<!-- Fix lỗ hổng XSS -->
+                    	<form action="/shop">
+						    <input type="text" placeholder="Tìm sản phẩm..." id="searchinput" name="search" pattern="[a-zA-Z0-9]+" required>
+						    <button type="submit"><span class="icon_search"></span></button>
+						</form>
+                    	
+                    
+                        <!-- <form action="/shop">
                             <input type="text" placeholder="Tìm sản phẩm..." id="searchinput" name = "search">
                             <button type="submit"><span class="icon_search"></span></button>
-                        </form>
+                        </form> -->
                     </div>
                     <div class="shop__sidebar__accordion">
                         <div class="accordion" id="accordionExample">
@@ -225,16 +232,16 @@
 </script>
 
 <!-- Js Plugins -->
-<script src="./assets/js/jquery-3.3.1.min.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script>
-<script src="./assets/js/jquery.nice-select.min.js"></script>
-<script src="./assets/js/jquery.nicescroll.min.js"></script>
-<script src="./assets/js/jquery.magnific-popup.min.js"></script>
-<script src="./assets/js/jquery.countdown.min.js"></script>
-<script src="./assets/js/jquery.slicknav.js"></script>
-<script src="./assets/js/mixitup.min.js"></script>
-<script src="./assets/js/owl.carousel.min.js"></script>
-<script src="./assets/js/main.js"></script>
+<script src="./web/assets/js/jquery-3.3.1.min.js"></script>
+<script src="./web/assets/js/bootstrap.min.js"></script>
+<script src="./web/assets/js/jquery.nice-select.min.js"></script>
+<script src="./web/assets/js/jquery.nicescroll.min.js"></script>
+<script src="./web/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="./web/assets/js/jquery.countdown.min.js"></script>
+<script src="./web/assets/js/jquery.slicknav.js"></script>
+<script src="./web/assets/js/mixitup.min.js"></script>
+<script src="./web/assets/js/owl.carousel.min.js"></script>
+<script src="./web/assets/js/main.js"></script>
 </body>
 
 </html>

@@ -32,7 +32,7 @@ public class OrderEntity {
 	private Long total_price;
 
 	@Column()
-	private Boolean payment_status;
+	private String payment_status;
 
 	@OneToMany(mappedBy = "order")
 	private List<ProductOrderEntity> productOrders = new ArrayList<>();
@@ -65,11 +65,11 @@ public class OrderEntity {
 		this.total_price = total_price;
 	}
 
-	public Boolean getPayment_status() {
+	public String getPayment_status() {
 		return payment_status;
 	}
 
-	public void setPayment_status(Boolean payment_status) {
+	public void setPayment_status(String payment_status) {
 		this.payment_status = payment_status;
 	}
 
@@ -101,7 +101,7 @@ public class OrderEntity {
 		super();
 	}
 
-	public OrderEntity(Long id, Date order_date, Double discount, Long total_price, Boolean payment_status,
+	public OrderEntity(Long id, Date order_date, Double discount, Long total_price, String payment_status,
 			List<ProductOrderEntity> productOrders, CustomerEntity customer) {
 		super();
 		this.id = id;

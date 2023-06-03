@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.laptrinhweb.Entity.ProductOrderEntity;
 import com.laptrinhweb.Service.Implementation.ProductService;
 import com.laptrinhweb.Service.Implementation.UserDetailService;
 
@@ -26,8 +27,24 @@ public class CartDetailController {
 		return "shopping-cart";
 	}
 	@GetMapping("/checkout")
-	public String checkout() {
+	public String checkout(Authentication authentication, Model model) {
+		if (authentication != null) {
+			model.addAttribute("total", userDetailService.getCart(authentication.getName()).getTotal_price());
+			model.addAttribute("cartlist", userDetailService.detailUser(authentication.getName()).getOrders());
+		}
+		
 		return "checkout";
+	}
+	@GetMapping("/confirmcart")
+	public String confirm(Authentication authentication, Model model,RedirectAttributes redirectAttributes) {
+		if (authentication != null) {
+			String result = userDetailService.confirmcart(authentication.getName());
+			if (result.equals("Đặt hàng thành công!!!")) {
+				redirectAttributes.addFlashAttribute("messagesuccess", result);
+			}
+			else redirectAttributes.addFlashAttribute("messagefail", result);
+		}
+		return "redirect:/checkout";
 	}
 	@GetMapping("/cart")
 	public String addProductToCart(Authentication authentication, Model model,

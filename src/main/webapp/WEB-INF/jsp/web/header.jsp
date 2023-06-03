@@ -6,7 +6,7 @@
 <div class="offcanvas-menu-wrapper">
    <div class="offcanvas__option">
       <div class="logo-mobile">
-         <img src="${pageContext.request.contextPath}/assets/img/shop/logomain.png" alt="">
+         <img src="${pageContext.request.contextPath}/web/assets/img/shop/logomain.png" alt="">
       </div>
       <div class="offcanvas__links">
          <a href="login">Đăng nhập/Đăng ký</a>
@@ -54,7 +54,7 @@
       <div class="row">
          <div class="col-lg-3 col-md-3">
             <div class="header__logo">
-               <a href="home"><img src="./assets/img/shop/logomain.png" alt=""></a>
+               <a href="home"><img src="./web/assets/img/shop/logomain.png" alt=""></a>
             </div>
          </div>
          <div class="col-lg-6 col-md-6">
@@ -71,9 +71,9 @@
             <div class="header__nav__option mobile-menu">
                <div class="header__nav-username">Hi!<b> ${userLogged.getFullname()}</b></div>
                <div class="header__nav-avatar">
-                  <a href="profile"><img src="assets/img/shop/For-Men.png" alt=""></a>
+                  <a href="profile"><img src="web/assets/img/shop/For-Men.png" alt=""></a>
                </div>
-               <a href="cartdetail?username=${userLogged.getUsername()}&type=view"><img src="assets/img/icon/cart.png" alt=""> <span></span></a>
+               <a href="cartdetail?username=${userLogged.getUsername()}&type=view"><img src="web/assets/img/icon/cart.png" alt=""> <span></span></a>
             </div>
          </div>
       </div>

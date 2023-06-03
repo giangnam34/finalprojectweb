@@ -18,21 +18,21 @@
            rel="stylesheet">
 
    <!-- Css Styles -->
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css"
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/bootstrap.min.css"
          type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/font-awesome.min.css"
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/font-awesome.min.css"
          type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/elegant-icons.css"
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/elegant-icons.css"
          type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/magnific-popup.css"
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/magnific-popup.css"
          type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/nice-select.css"
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/nice-select.css"
          type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/owl.carousel.min.css"
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/owl.carousel.min.css"
          type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/slicknav.min.css"
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/slicknav.min.css"
          type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -59,10 +59,20 @@
 <!-- Breadcrumb Section End -->
 
 <!-- Checkout Section Begin -->
+<c:if test = "${messagesuccess != null}">
+<div class="alert alert-success text-center">
+	${messagesuccess}
+</div>
+</c:if>
+<c:if test = "${messagefail != null}">
+<div class="alert alert-danger text-center">
+	${messagefail}
+</div>
+</c:if>
 <section class="checkout spad">
    <div class="container">
       <div class="checkout__form">
-         <form action="confirmcart?username=${userLogged.username}&total=${total}" method="post">
+         <form action="confirmcart?username=${userLogged.username}&total=${total}" method="get">
             <div class="row">
                <div class="col-lg-6 col-md-6">
                   <form id="form" >
@@ -110,7 +120,7 @@
                      <ul class="checkout__total__products">
                         <c:forEach var="cart"
                                    items="${cartlist}">
-                        <li>${cart.name} <span>${cart.price*cart.quantity}</span></li>
+                        <li>${cart.getProduct().getName()} <span>${cart.getProduct().getMoney()*cart.getQuantity()}</span></li>
                         </c:forEach>
                      </ul>
                      <ul class="checkout__total__all">
@@ -135,7 +145,7 @@
                        alt="Tài khoản ngân hàng">
             </div>
             <div class="payment-close">
-               <img src="assets/img/icon/close.png" alt="close" class="ti-close">
+               <img src="web/assets/img/icon/close.png" alt="close" class="ti-close">
             </div>
          </div>
       </div>
@@ -158,16 +168,16 @@
 <!-- Search End -->
 
 <!-- Js Plugins -->
-<script src="${pageContext.request.contextPath}/assets/js/jquery-3.3.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.nice-select.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.nicescroll.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.magnific-popup.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.countdown.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.slicknav.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/mixitup.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/owl.carousel.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery-3.3.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.nice-select.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.nicescroll.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.countdown.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/jquery.slicknav.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/mixitup.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/owl.carousel.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/assets/js/main.js"></script>
 </body>
 
 </html>

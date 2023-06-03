@@ -14,14 +14,14 @@
          rel="stylesheet">
 
    <!-- Css Styles -->
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/font-awesome.min.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/elegant-icons.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/magnific-popup.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/nice-select.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/owl.carousel.min.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/slicknav.min.css" type="text/css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/bootstrap.min.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/font-awesome.min.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/elegant-icons.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/magnific-popup.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/nice-select.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/owl.carousel.min.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/slicknav.min.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/web/assets/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -33,7 +33,7 @@
 <section class="hero">
    <div class="video-slider">
       <video loop="" autoplay="" playsinline="" class="slider-video" style="width: 100%;">
-         <source src="/assets/img/shop/slider.mp4">
+         <source src="/web/assets/img/shop/slider.mp4">
       </video>
    </div>
 </section>
@@ -46,7 +46,7 @@
          <div class="col-lg-9 offset-lg-3">
             <div class="banner__item">
                <div class="banner__item__pic">
-                  <img src="/assets/img/shop/vans/vn0a4uuc1ae-4.png" alt="">
+                  <img src="/web/assets/img/shop/vans/vn0a4uuc1ae-4.png" alt="">
                </div>
                <div class="banner__item__text">
                   <h2>Mẫu giày mới tháng 11/2022</h2>
@@ -57,7 +57,7 @@
          <div class="col-lg-5">
             <div class="banner__item banner__item--middle">
                <div class="banner__item__pic">
-                  <img src="/assets/img/shop/vans/vn0a4uuc1ae-4.png">
+                  <img src="/web/assets/img/shop/vans/vn0a4uuc1ae-4.png">
                </div>
                <div class=" banner__item__text">
                   <h2>Top sản phẩm bán chạy</h2>
@@ -68,7 +68,7 @@
          <div class="col-lg-7">
             <div class="banner__item banner__item--last">
                <div class="banner__item__pic">
-                  <img src="/assets/img/shop/vans/vn0a4uuc1ae-4.png" alt="">
+                  <img src="/web/assets/img/shop/vans/vn0a4uuc1ae-4.png" alt="">
                </div>
                <div class="banner__item__text">
                   <h2>Giảm giá sốc</h2>
@@ -202,12 +202,12 @@
       <div class="row">
          <div class="col-lg-8">
             <div class="instagram__pic">
-               <div class="instagram__pic__item set-bg" data-setbg="/assets/img/instagram/instagram-1.jpg"></div>
-               <div class="instagram__pic__item set-bg" data-setbg="/assets/img/instagram/instagram-2.jpg"></div>
-               <div class="instagram__pic__item set-bg" data-setbg="/assets/img/instagram/instagram-3.jpg"></div>
-               <div class="instagram__pic__item set-bg" data-setbg="/assets/img/instagram/instagram-4.jpg"></div>
-               <div class="instagram__pic__item set-bg" data-setbg="/assets/img/instagram/instagram-5.jpg"></div>
-               <div class="instagram__pic__item set-bg" data-setbg="/assets/img/instagram/instagram-6.jpg"></div>
+               <div class="instagram__pic__item set-bg" data-setbg="/web/assets/img/instagram/instagram-1.jpg"></div>
+               <div class="instagram__pic__item set-bg" data-setbg="/web/assets/img/instagram/instagram-2.jpg"></div>
+               <div class="instagram__pic__item set-bg" data-setbg="/web/assets/img/instagram/instagram-3.jpg"></div>
+               <div class="instagram__pic__item set-bg" data-setbg="/web/assets/img/instagram/instagram-4.jpg"></div>
+               <div class="instagram__pic__item set-bg" data-setbg="/web/assets/img/instagram/instagram-5.jpg"></div>
+               <div class="instagram__pic__item set-bg" data-setbg="/web/assets/img/instagram/instagram-6.jpg"></div>
             </div>
          </div>
          <div class="col-lg-4">
@@ -252,16 +252,16 @@
 </script>
 
 <!-- Js Plugins -->
-<script src="./assets/js/jquery-3.3.1.min.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script>
-<script src="./assets/js/jquery.nice-select.min.js"></script>
-<script src="./assets/js/jquery.nicescroll.min.js"></script>
-<script src="./assets/js/jquery.magnific-popup.min.js"></script>
-<script src="./assets/js/jquery.countdown.min.js"></script>
-<script src="./assets/js/jquery.slicknav.js"></script>
-<script src="./assets/js/mixitup.min.js"></script>
-<script src="./assets/js/owl.carousel.min.js"></script>
-<script src="./assets/js/main.js"></script>
+<script src="./web/assets/js/jquery-3.3.1.min.js"></script>
+<script src="./web/assets/js/bootstrap.min.js"></script>
+<script src="./web/assets/js/jquery.nice-select.min.js"></script>
+<script src="./web/assets/js/jquery.nicescroll.min.js"></script>
+<script src="./web/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="./web/assets/js/jquery.countdown.min.js"></script>
+<script src="./web/assets/js/jquery.slicknav.js"></script>
+<script src="./web/assets/js/mixitup.min.js"></script>
+<script src="./web/assets/js/owl.carousel.min.js"></script>
+<script src="./web/assets/js/main.js"></script>
 </body>
 
 </html>
